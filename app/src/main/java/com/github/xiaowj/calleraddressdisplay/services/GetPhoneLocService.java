@@ -26,7 +26,7 @@ public class GetPhoneLocService extends Service {
     public static final String SHOW_CITY = "show_city";
     private final String GET_NUMBER_LOCAL = "http://apis.baidu.com/apistore/mobilenumber/mobilenumber";
     private WindowManager wManager;
-    private RelativeLayout phoneLoc;
+    private RelativeLayout phoneLoc;//12
 
     public GetPhoneLocService() {
     }
