@@ -41,13 +41,16 @@ public class PhoneReceiver extends BroadcastReceiver {
                 case TelephonyManager.CALL_STATE_IDLE:
                     //电话挂断
                     LogUtils.e("CALL_STATE_IDLE");
-                    isGetingPhoneLoc = false;
+                    if (isGetingPhoneLoc) {
+                        GetPhoneLocService.startActionFoo(context, incomingNumber,false);
+                        isGetingPhoneLoc = false;
+                    }
                     break;
                 case TelephonyManager.CALL_STATE_RINGING:
                     //电话铃响
                     LogUtils.e("CALL_STATE_RINGING");
                     if (!isGetingPhoneLoc) {
-                        GetPhoneLocService.startActionFoo(context, incomingNumber);
+                        GetPhoneLocService.startActionFoo(context, incomingNumber,true);
                         isGetingPhoneLoc = true;
                     }
                     break;
