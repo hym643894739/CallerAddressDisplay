@@ -33,9 +33,6 @@
             android:name=".services.GetPhoneLocService"
             android:enabled="true"
             android:exported="true" />
-        <service
-            android:name=".services.GetPhoneLocIntentService"
-            android:exported="false"></service>
     </application>
 
 </manifest>

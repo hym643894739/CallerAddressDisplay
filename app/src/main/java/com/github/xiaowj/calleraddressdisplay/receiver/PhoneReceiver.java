@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 
-import com.github.xiaowj.calleraddressdisplay.services.GetPhoneLocIntentService;
 import com.github.xiaowj.calleraddressdisplay.services.GetPhoneLocService;
 import com.github.xiaowj.calleraddressdisplay.utils.LogUtils;
 import com.github.xiaowj.calleraddressdisplay.utils.NetWorkUtils;
@@ -48,7 +47,7 @@ public class PhoneReceiver extends BroadcastReceiver {
                     //电话铃响
                     LogUtils.e("CALL_STATE_RINGING");
                     if (!isGetingPhoneLoc) {
-                        GetPhoneLocIntentService.startActionFoo(context,incomingNumber,"");
+                        GetPhoneLocService.startActionFoo(context, incomingNumber);
                         isGetingPhoneLoc = true;
                     }
                     break;
